@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1"
+    android:orientation="vertical">
+    <Button
+        android:text="ServiceTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnServiceTest"
+        android:textAllCaps="false" />
+    <Button
+        android:text="ControlTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnControlTest"
+        android:textAllCaps="false" />
+    <Button
+        android:text="Nitification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNotificationTest"
+        android:textAllCaps="false" />
+    <Button
+        android:text="ListViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_btnListViewTest"
+        android:textAllCaps="false" />
+    <Button
+        android:text="AsyncTaskTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAsyncTaskTest"
+        android:textAllCaps="false" />
+</LinearLayout>
