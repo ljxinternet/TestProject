@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Locations;
+using Android.Media;
 using Android.Widget;
 using Android.OS;
 using Android.Support.V4.Content;
@@ -27,12 +28,6 @@ namespace BroadcastTest
         private TestReceiver _receiver;
         private AlarmManager _alarmManager;
 
-
-        //private readonly string SERVICE_TEST = "Xamarin.Service.Test";
-        private readonly string BROADCAST_TEST = "Xamarin.Broadcast.Test";
-
-
-
         #endregion
 
 
@@ -51,8 +46,6 @@ namespace BroadcastTest
         /// </summary>
         private void Init()
         {
-            
-           
             //LocalBroadcastManager localBM = LocalBroadcastManager.GetInstance(this);
              _receiver=new TestReceiver();
             etTextTime = FindViewById<EditText>(Resource.Id.etTextTime);
@@ -60,26 +53,18 @@ namespace BroadcastTest
             Button btnRegisterBroadcast = FindViewById<Button>(Resource.Id.btnRegisterBroadcast);
             btnRegisterBroadcast.Click += (send, e) =>
             {
-                //RegisterBroadcast();
-                var intentFilter = new IntentFilter(BROADCAST_TEST);
-                RegisterReceiver(_receiver, intentFilter);
             };
             Button btnUnRegisterBroadcast = FindViewById<Button>(Resource.Id.btnUnRegisterBroadcast);
             btnUnRegisterBroadcast.Click += (send, e) =>
             {
-                UnregisterReceiver(_receiver);
-                //Intent intent=new Intent("Xamarin.Broadcast.Test");
-                //SendBroadcast(intent);
             };
             Button btnStartServce = FindViewById<Button>(Resource.Id.btnStartServce);
             btnStartServce.Click += (send, e) =>
             {
-                
-               
-                
+
             };
             Button btnStopService = FindViewById<Button>(Resource.Id.btnStopService);
-            btnStopService.Click += (send, e) => { StopService(new Intent(this, typeof(AlarmService))); };
+            btnStopService.Click += (send, e) => {  };
 
             //
             Button btnStartAlarm = FindViewById<Button>(Resource.Id.btnStartAlarm);
@@ -134,16 +119,12 @@ namespace BroadcastTest
                 Toast.MakeText(this, "扫描取消", ToastLength.Short).Show();
             }
         }
-
         
-
-
-
         private void BtnStopAlarm_Click(object sender, EventArgs e)
         {
             if (_alarmManager!=null)
             {
-                PendingIntent pIntent = PendingIntent.GetService(Application.Context, 0, new Intent(Android.App.Application.Context, typeof(AlarmService)), 0);
+                PendingIntent pIntent = PendingIntent.GetBroadcast(Application.Context, 0, new Intent(Android.App.Application.Context, typeof(AlarmReceiver)), 0);
                 _alarmManager.Cancel(pIntent);
                 _alarmManager = null;
                 Toast.MakeText(this, "定时任务被取消", ToastLength.Short).Show();
@@ -154,105 +135,12 @@ namespace BroadcastTest
 
         private void BtnStartAlarm_Click(object sender, EventArgs e)
         {
-            Intent alarmService = new Intent(this, typeof(AlarmService));
-            StartService(alarmService);
-
-
-
+            Intent alarmService = new Intent(this, typeof(AlarmTestService));
             int mTime = int.Parse(etTextTime.Text);
-            _alarmManager = (AlarmManager)GetSystemService(AlarmService);
-            long triggerAtMills = SystemClock.ElapsedRealtime() + mTime * 1000;
-            PendingIntent pIntent = PendingIntent.GetService(Application.Context, 0, new Intent(Android.App.Application.Context, typeof(AlarmService)), 0);
-            //_alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, triggerAtMills, pIntent);
-            _alarmManager.SetRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.CurrentThreadTimeMillis(), mTime * 1000, pIntent);
-            //_alarmManager.SetWindow(AlarmType.ElapsedRealtimeWakeup,SystemClock.CurrentThreadTimeMillis(),mTime*1000,pIntent);
-            Toast.MakeText(this, $"定时任务启动,间隔{mTime}秒",ToastLength.Short).Show();
+            alarmService.PutExtra("Time", mTime * 1000);
+            StartService(alarmService);
+            Toast.MakeText(this, "定时任务启动", ToastLength.Short).Show();
         }
-
-        /// <summary>
-        /// The register broadcast.
-        /// </summary>
-        void RegisterBroadcast()
-        {
-            Intent alarmService = new Intent(this, typeof(AlarmService));
-            StopService(alarmService);
-        }
-
-        protected override void OnSaveInstanceState(Bundle outState)
-        {
-            base.OnSaveInstanceState(outState);
-
-        }
-
-
-        protected override void OnRestoreInstanceState(Bundle savedInstanceState)
-        {
-            base.OnRestoreInstanceState(savedInstanceState);
-        }
-
-        void GetHtmlAsync(string url, Func<string> OnSuccess, Action<string> OnError)
-        {
-            SufeiUtil.HttpHelper http=new HttpHelper();
-            HttpItem item=new HttpItem()
-            {
-                URL = url,
-                Method = "GET",
-                ResultType = ResultType.String
-            };
-            try
-            {
-                HttpResult result = http.GetHtml(item);
-                if (result.StatusCode == HttpStatusCode.OK)
-                {
-                    OnSuccess();
-                }
-                else
-                {
-                    OnError("网络错误.");
-                }
-            }
-            catch (Exception e)
-            {
-                OnError(e.Message);
-                //Console.WriteLine(e);
-                //throw;
-            }
-           
-
-        }
-
-        //
-        private LocationManager locationManager;
-
-        private Location location;
-        //
-
-        void GetGPSLocation()
-        {
-            //获取地理位置管理器
-
-            //locationManager = (LocationManager)GetSystemService(Context.LocationService);
-            ////获取地理位置信息设置查询条件
-            //if (locationManager.IsProviderEnabled(LocationManager.NetworkProvider))
-            //{
-            //    location = locationManager.GetLastKnownLocation(LocationManager.NetworkProvider);
-               
-            //}
-            //else
-            //{
-            //    Criteria criteria=new Criteria();
-            //    criteria.CostAllowed = true;
-            //    criteria.AltitudeRequired = false;
-            //    criteria.BearingRequired = false;
-            //    locationManager.GetBestProvider(criteria,true);
-            //    locationManager.RequestLocationUpdates();
-            //}
-            //if (location != null)
-            //{
-                
-            //}
-        }
-
     }
 }
 
