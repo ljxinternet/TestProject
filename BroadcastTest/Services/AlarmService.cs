@@ -13,6 +13,7 @@ using Android.Support.V4.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using BroadcastTest.Broadcasts;
 //
 using SufeiUtil;
 
@@ -33,6 +34,7 @@ namespace BroadcastTest.Services
         private HttpItem _item;
         private AlarmManager alarm;
         private Intent _intent;
+        private AlarmReceiver _alarmReceiver;
 
         public override IBinder OnBind(Intent intent)
         {
@@ -43,13 +45,25 @@ namespace BroadcastTest.Services
         public override void OnCreate()
         {
             base.OnCreate();
+            //
             _http=new HttpHelper();
             isRun = true;
             _nm = (NotificationManager)GetSystemService(NotificationService);
             _intent = new Intent(Application.Context, typeof(MainActivity));
+            //通知
             ServerNotification("Alarm Running...");
+            //注册广播
+            _alarmReceiver=new AlarmReceiver();
+            IntentFilter intentFilter=new IntentFilter();
+            intentFilter.AddAction("Xamarin.Broadcast.AlarmTests");
+            RegisterReceiver(_alarmReceiver,intentFilter);
+
         }
 
+        /// <summary>
+        /// 前台通知：避免被杀
+        /// </summary>
+        /// <param name="text"></param>
         void ServerNotification(string text)
         {
             PendingIntent pendingIntent=PendingIntent.GetActivity(Application.Context,0,_intent,0);
@@ -58,19 +72,19 @@ namespace BroadcastTest.Services
             
             builder.SetTicker("前台服务开启...");
             notification = builder.Build();
-            _nm.Notify(1,notification);
-
-            
-
-            //nm.Notify(99999, notification);
-
+            //_nm.Notify(1,notification);
             StartForeground(99999, notification);
         }
 
         public override void OnDestroy()
         {
             base.OnDestroy();
+            //
             isRun = false;
+            StopForeground(true);
+            _nm.Cancel(99999);
+            //销毁广播
+            UnregisterReceiver(_alarmReceiver);
         }
 
         public override void OnLowMemory()

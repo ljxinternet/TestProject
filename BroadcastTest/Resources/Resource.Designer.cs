@@ -26,6 +26,9 @@ namespace BroadcastTest
 		
 		public static void UpdateIdValues()
 		{
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::BroadcastTest.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::BroadcastTest.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::BroadcastTest.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -1945,6 +1948,9 @@ namespace BroadcastTest
 			// aapt resource value: 0x7f07001f
 			public const int collapseActionView = 2131165215;
 			
+			// aapt resource value: 0x7f070088
+			public const int contentFrame = 2131165320;
+			
 			// aapt resource value: 0x7f07004a
 			public const int contentPanel = 2131165258;
 			
@@ -2438,6 +2444,12 @@ namespace BroadcastTest
 			
 			// aapt resource value: 0x7f040031
 			public const int support_simple_spinner_dropdown_item = 2130968625;
+			
+			// aapt resource value: 0x7f040032
+			public const int zxingscanneractivitylayout = 2130968626;
+			
+			// aapt resource value: 0x7f040033
+			public const int zxingscannerfragmentlayout = 2130968627;
 			
 			static Layout()
 			{

@@ -16,7 +16,7 @@ using BroadcastTest.Services;
 namespace BroadcastTest.Broadcasts
 {
     [BroadcastReceiver(Enabled =true,Exported =true)]
-    //[IntentFilter(new string[]{ "Xamarin.Broadcast.Test2" })]
+    [IntentFilter(new string[] { "Xamarin.Broadcast.AlarmTests" })]
     public class AlarmReceiver : BroadcastReceiver
     {
         //private int j = 1;

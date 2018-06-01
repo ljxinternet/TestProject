@@ -14,13 +14,14 @@ using Android.Widget;
 namespace BroadcastTest.Broadcasts
 {
     [BroadcastReceiver]
-    [IntentFilter(new string[] { "android.net.conn.CONNECTIVITY_CHANGE" })]
-    [Register("BroadcastTest.Broadcasts.StartServiceReceiver")]
+    //[BroadcastReceiver(Enabled = true,Exported = true)]
+    //[IntentFilter(new string[] { "android.net.conn.CONNECTIVITY_CHANGE","Xamarin.Broadcast.Test2" })]
+    ////[Register("ZOM.BroadcastTest.BroadcastTest.Broadcasts.StartServiceReceiver")]
     public class StartServiceReceiver : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)
         {
-            Toast.MakeText(context, "Received intent!", ToastLength.Short).Show();
+            Toast.MakeText(context, "网络状态发生改变.", ToastLength.Short).Show();
         }
     }
 }
