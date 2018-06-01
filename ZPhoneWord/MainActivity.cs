@@ -46,7 +46,7 @@ namespace Zcom.ndsc
 
         #region Field
 
-        private Button btnNotification,btnTestService, btnControlTest;
+        private Button btnNotification, btnTestService, btnControlTest, btnAsyncTaskTest;
 
         //private MyClass my;
 
@@ -73,6 +73,9 @@ namespace Zcom.ndsc
         void Init()
         {
             //
+            btnAsyncTaskTest = FindViewById<Button>(Resource.Id.btnAsyncTaskTest);
+            btnAsyncTaskTest.Click += BtnAsyncTaskTest_Click;
+            //
             btnNotification = FindViewById<Button>(Resource.Id.btnNotificationTest);
             btnNotification.Click += BtnNotificationClick;
             //
@@ -86,6 +89,11 @@ namespace Zcom.ndsc
             btnListView.Click += BtnListView_Click;
         }
 
+        private void BtnAsyncTaskTest_Click(object sender, System.EventArgs e)
+        {
+
+            //throw new System.NotImplementedException();
+        }
 
         private void BtnListView_Click(object sender, System.EventArgs e)
         {
@@ -110,32 +118,6 @@ namespace Zcom.ndsc
         {
             var client = new Intent("Xamarin.Broadcast.Test");
             SendBroadcast(client);
-
-
-
-            //Intent intent = new Intent(this, typeof(MainActivity));
-
-            //PendingIntent pIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.UpdateCurrent);
-
-            //var customeView = new RemoteViews(this.PackageName, Resource.Layout.CustomeView);
-            //customeView.SetOnClickPendingIntent(Resource.Id.tVContent, pIntent);
-            //customeView.SetTextViewText(Resource.Id.tVTitle, "这是自定义标题");
-            //customeView.SetTextViewText(Resource.Id.tVContent, "这是自定义内容");
-
-            ////Notification.Builder builder = new Notification.Builder(this).SetAutoCancel(true).SetContentIntent(pIntent).SetCustomContentView(customeView);
-            //Notification.Builder builder = new Notification.Builder(this)
-            //    .SetAutoCancel(true)
-            //    .SetContentIntent(pIntent)
-            //    .SetContentTitle("Title")
-            //    .SetContentText("Text")
-            //    .SetContent(customeView);
-            //    //.SetCustomContentView(customeView);
-            //Notification notification = builder.Build();
-
-
-            //NotificationManager manager = (NotificationManager)GetSystemService(Context.NotificationService);
-            //manager.Notify(0, notification);
-            ////throw new System.NotImplementedException();
         }
     }
 }

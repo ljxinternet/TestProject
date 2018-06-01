@@ -30,8 +30,31 @@
         android:id="@+id/btnStopService"
         android:textAllCaps="false" />
     <TextView
-        android:text="Text"
+        android:text="Service间隔时间(秒):"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtView" />
+        android:id="@+id/textView1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTextTime"
+        android:hint="输入间隔时间"
+        android:text="10" />
+    <Button
+        android:text="StartAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStartAlarm"
+        android:textAllCaps="false" />
+    <Button
+        android:text="StopAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStopAlarm"
+        android:textAllCaps="false" />
+    <Button
+        android:text="Test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTest" />
 </LinearLayout>
