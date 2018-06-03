@@ -40,7 +40,13 @@ namespace BroadcastTest.Broadcasts
             _time = intent.GetIntExtra("Time",60*60*1000);
             Handler myHandler=new Handler();
 
-            myHandler.Post(() => { Toast.MakeText(context, $"接收到广播.Time:{_time}", ToastLength.Short).Show(); });
+            myHandler.Post(() => { Toast.MakeText(Application.Context, $"接收到广播.Time:{_time}", ToastLength.Short).Show(); });
+
+            //var mIntent=new Intent(context,typeof(TestService));
+            //mIntent.PutExtra("Time", _time);
+            //context.StartService(mIntent);
+
+
 
             GetHtmlAsync("http://ip.chinaz.com/getip.aspx", (html) =>
                 {
@@ -51,8 +57,7 @@ namespace BroadcastTest.Broadcasts
                 });
 
             //设定定时程序
-
-            AlarmTask(context, intent,_time);
+            AlarmTask(context, intent, _time);
         }
 
         /// <summary>
@@ -71,6 +76,12 @@ namespace BroadcastTest.Broadcasts
             _alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, triggerAtMills, pIntent);
         }
 
+        /// <summary>
+        /// 获取Html
+        /// </summary>
+        /// <param name="url">网址</param>
+        /// <param name="OnSuccess">成功后调用,返回html</param>
+        /// <param name="OnError">失败后调用,返回error信息</param>
         void GetHtmlAsync(string url,Action<string> OnSuccess,Action<string> OnError)
         {
             Task.Factory.StartNew(() =>

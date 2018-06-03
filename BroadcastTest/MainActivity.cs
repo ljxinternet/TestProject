@@ -26,7 +26,7 @@ namespace BroadcastTest
 
         private EditText etTextTime;
         private TestReceiver _receiver;
-        private AlarmManager _alarmManager;
+        
 
         #endregion
 
@@ -122,15 +122,15 @@ namespace BroadcastTest
         
         private void BtnStopAlarm_Click(object sender, EventArgs e)
         {
-            if (_alarmManager!=null)
-            {
                 PendingIntent pIntent = PendingIntent.GetBroadcast(Application.Context, 0, new Intent(Android.App.Application.Context, typeof(AlarmReceiver)), 0);
-                _alarmManager.Cancel(pIntent);
-                _alarmManager = null;
+
+         AlarmManager _alarmManager =(AlarmManager) Android.App.Application.Context.GetSystemService(AlarmService);
+        _alarmManager.Cancel(pIntent);
+            Intent alarmService = new Intent(this, typeof(AlarmTestService));
+            StopService(alarmService);
                 Toast.MakeText(this, "定时任务被取消", ToastLength.Short).Show();
 
-            }
-            //throw new NotImplementedException();
+
         }
 
         private void BtnStartAlarm_Click(object sender, EventArgs e)

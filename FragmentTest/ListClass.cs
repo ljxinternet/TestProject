@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+
+namespace FragmentTest
+{
+    class ListClass
+    {
+        public static string[] Titles = { "asfdsfg1", "2", "3", "4", "5"};
+
+        public static string[] Content = { "fdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsf1", "fdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsfv2", "3fdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsf", "fdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsf4", "fdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsffdsf5" };
+
+
+    }
+}

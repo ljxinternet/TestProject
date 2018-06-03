@@ -1834,8 +1834,8 @@ namespace FragmentTest
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070075
-			public const int action0 = 2131165301;
+			// aapt resource value: 0x7f070077
+			public const int action0 = 2131165303;
 			
 			// aapt resource value: 0x7f07005a
 			public const int action_bar = 2131165274;
@@ -1861,8 +1861,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f07005b
 			public const int action_context_bar = 2131165275;
 			
-			// aapt resource value: 0x7f070079
-			public const int action_divider = 2131165305;
+			// aapt resource value: 0x7f07007b
+			public const int action_divider = 2131165307;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1894,14 +1894,17 @@ namespace FragmentTest
 			// aapt resource value: 0x7f07002a
 			public const int bottom = 2131165226;
 			
-			// aapt resource value: 0x7f070074
-			public const int button1 = 2131165300;
+			// aapt resource value: 0x7f07006a
+			public const int btnTest = 2131165290;
+			
+			// aapt resource value: 0x7f070076
+			public const int button1 = 2131165302;
 			
 			// aapt resource value: 0x7f070044
 			public const int buttonPanel = 2131165252;
 			
-			// aapt resource value: 0x7f070076
-			public const int cancel_action = 2131165302;
+			// aapt resource value: 0x7f070078
+			public const int cancel_action = 2131165304;
 			
 			// aapt resource value: 0x7f07002b
 			public const int center = 2131165227;
@@ -1915,8 +1918,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070052
 			public const int checkbox = 2131165266;
 			
-			// aapt resource value: 0x7f07007c
-			public const int chronometer = 2131165308;
+			// aapt resource value: 0x7f07007e
+			public const int chronometer = 2131165310;
 			
 			// aapt resource value: 0x7f070033
 			public const int clip_horizontal = 2131165235;
@@ -1942,20 +1945,20 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070040
 			public const int default_activity_button = 2131165248;
 			
-			// aapt resource value: 0x7f07006c
-			public const int design_bottom_sheet = 2131165292;
+			// aapt resource value: 0x7f07006e
+			public const int design_bottom_sheet = 2131165294;
+			
+			// aapt resource value: 0x7f070075
+			public const int design_menu_item_action_area = 2131165301;
+			
+			// aapt resource value: 0x7f070074
+			public const int design_menu_item_action_area_stub = 2131165300;
 			
 			// aapt resource value: 0x7f070073
-			public const int design_menu_item_action_area = 2131165299;
+			public const int design_menu_item_text = 2131165299;
 			
 			// aapt resource value: 0x7f070072
-			public const int design_menu_item_action_area_stub = 2131165298;
-			
-			// aapt resource value: 0x7f070071
-			public const int design_menu_item_text = 2131165297;
-			
-			// aapt resource value: 0x7f070070
-			public const int design_navigation_view = 2131165296;
+			public const int design_navigation_view = 2131165298;
 			
 			// aapt resource value: 0x7f07000e
 			public const int disableHome = 2131165198;
@@ -1966,8 +1969,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
-			// aapt resource value: 0x7f070081
-			public const int end_padder = 2131165313;
+			// aapt resource value: 0x7f070083
+			public const int end_padder = 2131165315;
 			
 			// aapt resource value: 0x7f070023
 			public const int enterAlways = 2131165219;
@@ -1996,6 +1999,9 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070038
 			public const int @fixed = 2131165240;
 			
+			// aapt resource value: 0x7f07006b
+			public const int fragment1 = 2131165291;
+			
 			// aapt resource value: 0x7f070005
 			public const int home = 2131165189;
 			
@@ -2011,8 +2017,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f07003f
 			public const int image = 2131165247;
 			
-			// aapt resource value: 0x7f070080
-			public const int info = 2131165312;
+			// aapt resource value: 0x7f070082
+			public const int info = 2131165314;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -2023,11 +2029,11 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070069
 			public const int left_fragment = 2131165289;
 			
-			// aapt resource value: 0x7f07007a
-			public const int line1 = 2131165306;
+			// aapt resource value: 0x7f07007c
+			public const int line1 = 2131165308;
 			
-			// aapt resource value: 0x7f07007e
-			public const int line3 = 2131165310;
+			// aapt resource value: 0x7f070080
+			public const int line3 = 2131165312;
 			
 			// aapt resource value: 0x7f07000b
 			public const int listMode = 2131165195;
@@ -2035,8 +2041,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070041
 			public const int list_item = 2131165249;
 			
-			// aapt resource value: 0x7f070078
-			public const int media_actions = 2131165304;
+			// aapt resource value: 0x7f07007a
+			public const int media_actions = 2131165306;
 			
 			// aapt resource value: 0x7f07001d
 			public const int middle = 2131165213;
@@ -2047,8 +2053,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070016
 			public const int multiply = 2131165206;
 			
-			// aapt resource value: 0x7f07006f
-			public const int navigation_header_container = 2131165295;
+			// aapt resource value: 0x7f070071
+			public const int navigation_header_container = 2131165297;
 			
 			// aapt resource value: 0x7f070021
 			public const int never = 2131165217;
@@ -2080,8 +2086,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
 			
-			// aapt resource value: 0x7f07006a
-			public const int rigth_fragment = 2131165290;
+			// aapt resource value: 0x7f07006c
+			public const int rigth_fragment = 2131165292;
 			
 			// aapt resource value: 0x7f070017
 			public const int screen = 2131165207;
@@ -2146,11 +2152,11 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070013
 			public const int showTitle = 2131165203;
 			
-			// aapt resource value: 0x7f07006e
-			public const int snackbar_action = 2131165294;
+			// aapt resource value: 0x7f070070
+			public const int snackbar_action = 2131165296;
 			
-			// aapt resource value: 0x7f07006d
-			public const int snackbar_text = 2131165293;
+			// aapt resource value: 0x7f07006f
+			public const int snackbar_text = 2131165295;
 			
 			// aapt resource value: 0x7f070027
 			public const int snap = 2131165223;
@@ -2173,8 +2179,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070031
 			public const int start = 2131165233;
 			
-			// aapt resource value: 0x7f070077
-			public const int status_bar_latest_event_content = 2131165303;
+			// aapt resource value: 0x7f070079
+			public const int status_bar_latest_event_content = 2131165305;
 			
 			// aapt resource value: 0x7f070065
 			public const int submit_area = 2131165285;
@@ -2182,20 +2188,20 @@ namespace FragmentTest
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f07007f
-			public const int text = 2131165311;
+			// aapt resource value: 0x7f070081
+			public const int text = 2131165313;
 			
-			// aapt resource value: 0x7f07007d
-			public const int text2 = 2131165309;
+			// aapt resource value: 0x7f07007f
+			public const int text2 = 2131165311;
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
 			
-			// aapt resource value: 0x7f070082
-			public const int textView1 = 2131165314;
+			// aapt resource value: 0x7f070084
+			public const int textView1 = 2131165316;
 			
-			// aapt resource value: 0x7f07007b
-			public const int time = 2131165307;
+			// aapt resource value: 0x7f07007d
+			public const int time = 2131165309;
 			
 			// aapt resource value: 0x7f070043
 			public const int title = 2131165251;
@@ -2209,8 +2215,8 @@ namespace FragmentTest
 			// aapt resource value: 0x7f070047
 			public const int topPanel = 2131165255;
 			
-			// aapt resource value: 0x7f07006b
-			public const int touch_outside = 2131165291;
+			// aapt resource value: 0x7f07006d
+			public const int touch_outside = 2131165293;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
